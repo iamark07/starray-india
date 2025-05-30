@@ -1,6 +1,5 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,7 +12,281 @@
   scroll-behavior: smooth;
 }
 
-.syne-font{
-    font-family: "Syne", sans-serif;
+.syne-font {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+}
+
+/* Global Styles */
+:root {
+  --primary-color: #f59e0b; /* Amber */
+  --secondary-color: #1f2937; /* Dark Gray */
+  --accent-color: #a16207; /* Darker Amber */
+  --text-color: #4b5563;
+  --light-bg: #f9fafb;
+  --dark-bg: #111827; /* Very Dark Gray */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+.syne-font {
+  font-family: "Syne", sans-serif;
+  font-weight: 700; /* Make the logo text bolder */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Increased padding */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+/* Button Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Form Styles */
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* Top Header Styles */
+.top-header {
+    width: 100%;
+}
+
+/* Header Styles */
+#site-header {
+    margin-top: 36px; /* Adjust based on top header height */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+#site-header.scroll-down {
+    transform: translateY(-100%);
+}
+
+#site-header.scroll-up {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  transition: all .2s;
+}
+
+.nav-link.active-nav-link{
+    color: var(--primary-color);
+}
+
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px; /* Thicker underline */
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-button:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile Menu */
+.mobile-nav {
+    background: linear-gradient(to bottom, #1f1f1f 0%, #161616 100%); /* Ensure gradient is applied */
+    color: #ffffff;
+    width: 280px;
+    max-width: 80%;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+    padding-top: 0; /* Remove top padding, manage with close button container */
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+/* Close Mobile Menu Button Container */
+.mobile-nav .close-button-container {
+    padding: 1rem 1.5rem; /* Padding around the close button */
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+/* Close Mobile Menu Button */
+.close-mobile-menu {
+    color: var(--primary-color);
+    background-color: rgba(245, 158, 11, 0.1);
+    transition: color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 41px;
+    height: 41px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+
+/* Mobile Navigation Links Container */
+.mobile-nav nav {
+    flex-grow: 1;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: all .3s;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     font-weight: 400;
+    display: block;
+}
+
+.mobile-nav-link.mobile-nav-link-active{
+    color: var(--primary-color);
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link:hover {
+    color: var(--primary-color);
+    padding-left: 10px;
+    background-color: rgba(245, 158, 11, 0.05); /* Very subtle amber background on hover */
+}
+
+/* Active Mobile Nav Link (assuming you add an 'active' class in JS) */
+.mobile-nav-link.active {
+    color: var(--primary-color); /* Amber color for active link */
+    font-weight: 700; /* Bolder for active */
+}
+
+/* Overlay */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
 }

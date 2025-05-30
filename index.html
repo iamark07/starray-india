@@ -4,33 +4,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Starray India - Leading manufacturer of modular kitchen hardware solutions. OEM partnerships available for cabinet hinges, slimbox, storage solutions and more.">
     <!-- tailwind css cdn  -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Remix Icon CDN -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
     <!-- custom css link  -->
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Starray India - Modern Kitchen Solutions</title>
+    <title>Starray India - Premium Kitchen Hardware Solutions</title>
 </head>
 
 <body class="bg-gray-50 overflow-x-hidden">
 
-    <h1 class="text-amber-500">Hello</h1>
+    <!-- Header -->
+    <header
+        class="sticky top-0 bg-gradient-to-r from-[#1f1f1f] via-[#161616] to-black text-white shadow-md w-full z-30">
+        <div class="container mx-auto px-6 md:px-10 py-5 lg:py-0 lg:h-[120px]">
+            <div class="justify-between items-center lg:items-start h-full flex lg:grid lg:gap-10 lg:grid-cols-9">
+                <div class="flex items-center lg:col-span-2 h-full">
+                    <a href="/">
+                        <img src="assets/images/Starray-logo.png" class="h-[44px] lg:h-[60px]" alt="Starray India Logo">
+                    </a>
+                </div>
+                <div class="lg:col-span-7 hidden lg:block">
+                    <!-- Top Header -->
+                    <div class="top-header text-sm pt-5 pb-2 border-b-[.5px] border-[#323232]">
+                        <div class="flex justify-center md:justify-between items-center">
+                            <div class="hidden md:flex items-center gap-7 text-xs">
+                                <span class="flex items-center"><i class="fas fa-phone-alt mr-1 scale-x-[-1]"></i> +91
+                                    XXXXXXXXXX</span>
+                                <span class="flex items-center"><i class="fas fa-envelope mr-1"></i>
+                                    info@starrayindia.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4 text-xs">
+                                <span class="hidden sm:inline">Follow Us:</span>
+                                <a href="#" class="hover:text-white transition duration-300"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-white transition duration-300"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-white transition duration-300"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="hidden md:flex md:justify-end space-x-8 text-[15px] mt-6 pb-2">
+                        <a href="/" class="nav-link active-nav-link">Home</a>
+                        <a href="#about" class="nav-link">About Us</a>
+                        <a href="#products" class="nav-link">Products</a>
+                        <a href="#oem" class="nav-link">OEM Partnership</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </nav>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button class="text-gray-100 focus:outline-none mobile-menu-button">
+                        <i class="fas fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <!-- Mobile Menu -->
+    <div
+        class="mobile-nav fixed top-0 right-0 w-64 h-full bg-gradient-to-r from-[#1f1f1f] to-[#161616] text-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end py-4 pr-6">
+            <button class="focus:outline-none close-mobile-menu">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4 text-sm">
+            <a href="/" class="mobile-nav-link mobile-nav-link-active">Home</a>
+            <a href="#about" class="mobile-nav-link">About Us</a>
+            <a href="#products" class="mobile-nav-link">Products</a>
+            <a href="#oem" class="mobile-nav-link">OEM Partnership</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div
+        class="overlay fixed top-0 left-0 w-full h-full bg-black/80 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40">
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-gray-900 relative overflow-hidden">
+        <div class="slider-container relative w-full">
+            <!-- Slider Images -->
+            <div class="slider-images flex w-full h-full transition-transform duration-700 ease-in-out">
+                <div class="slider-item w-full flex-shrink-0">
+                    <img src="assets/images/banner/Home-Banner-1.jpg" alt="Starray India Banner 1" class="w-full h-auto object-cover hidden lg:block">
+                    <img src="assets/images/banner/Home-Banner-1.jpg" alt="Starray India Mobile Banner 1" class="w-full h-auto object-cover block lg:hidden">
+                </div>
+                <div class="slider-item w-full flex-shrink-0">
+                    <img src="assets/images/banner/Home-Banner-2.jpg" alt="Starray India Banner 2" class="w-full h-auto object-cover hidden lg:block">
+                    <img src="assets/images/banner/Home-Banner-2.jpg" alt="Starray India Mobile Banner 2" class="w-full h-auto object-cover block lg:hidden">
+                </div>
+                <!-- Add more slider items similarly -->
+            </div>
+
+            <!-- Slider Navigation Dots (Optional) -->
+            <div class="slider-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                <!-- Dots will be added by JavaScript -->
+            </div>
+
+            <!-- Slider Navigation Arrows (Optional) -->
+            <button class="slider-arrow slider-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-arrow slider-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+             <!-- Optional: Add text content overlay if needed -->
+             <!-- <div class="absolute inset-0 flex items-center justify-center z-10">
+                <div class="text-center text-white p-4">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Brilliant Hardware Solutions</h1>
+                    <p class="text-lg md:text-xl mb-8">Delivering excellence across India.</p>
+                    <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition duration-300">Explore Products</a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="products" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-10">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Product Range</h2>
+
+            <!-- Category Cards Horizontal Scroll -->
+            <div class="category-cards-container flex justify-center overflow-x-auto pb-4 mb-12">
+                <!-- All Products Card -->
+                <div class="category-card flex-shrink-0 w-40 bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg active" data-filter="all">
+                    <div class="mb-2">
+                         <i class="fas fa-boxes text-2xl text-gray-600"></i> <!-- Example Icon -->
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800">All Products</h3>
+                </div>
+
+                <!-- Category Card - Cabinet Hinges -->
+                <div class="category-card flex-shrink-0 w-40 bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg ml-4" data-filter="cabinet-hinges">
+                    <div class="mb-2">
+                         <i class="fas fa-door-open text-2xl text-gray-600"></i> <!-- Example Icon -->
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800">Cabinet Hinges</h3>
+                </div>
+
+                 <!-- Category Card - Slimbox -->
+                <div class="category-card flex-shrink-0 w-40 bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg ml-4" data-filter="slimbox">
+                    <div class="mb-2">
+                         <i class="fas fa-box-open text-2xl text-gray-600"></i> <!-- Example Icon -->
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800">Tandem Box</h3>
+                </div>
+
+                 <!-- Category Card - Modular Storage -->
+                <div class="category-card flex-shrink-0 w-40 bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg ml-4" data-filter="modular-storage">
+                    <div class="mb-2">
+                         <i class="fas fa-pallet text-2xl text-gray-600"></i> <!-- Example Icon -->
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800">Wicker Baskets</h3>
+                </div>
+
+                 <!-- Category Card - Plinth Solutions -->
+                <div class="category-card flex-shrink-0 w-40 bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg ml-4" data-filter="plinth-solutions">
+                    <div class="mb-2">
+                         <i class="fas fa-ruler-horizontal text-2xl text-gray-600"></i> <!-- Example Icon -->
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800">kitchen Series</h3>
+                </div>
+
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="product-grid">
+                <!-- Product Card 1 - Cabinet Hinges -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group" data-category="cabinet-hinges">
+                    <a href="#" class="block h-full w-full relative">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/Products/1.jpg" alt="Cabinet Hinges" class="w-full h-48 object-cover transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">Cabinet Hinges</h3>
+                                <div class="flex items-center gap-2 text-white/80 text-xs">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Premium Quality</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Smooth Operation</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-10">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product Card 2 - Slimbox -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group" data-category="slimbox">
+                    <a href="#" class="block h-full w-full relative">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/Products/7.jpg" alt="Slimbox" class="w-full h-48 object-cover transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">Slimbox</h3>
+                                <div class="flex items-center gap-2 text-white/80 text-xs">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Space Efficient</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Modern Design</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-10">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product Card 3 - Modular Storage -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group" data-category="modular-storage">
+                    <a href="#" class="block h-full w-full relative">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/Products/2.jpg" alt="Modular Storage" class="w-full h-48 object-cover transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">Modular Storage</h3>
+                                <div class="flex items-center gap-2 text-white/80 text-xs">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Customizable</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Easy Installation</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-10">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product Card 4 - Plinth Solutions -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group" data-category="plinth-solutions">
+                    <a href="#" class="block h-full w-full relative">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/Products/5.jpg" alt="Plinth Solutions" class="w-full h-48 object-cover transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">Plinth Solutions</h3>
+                                <div class="flex items-center gap-2 text-white/80 text-xs">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Smart Design</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Space Optimized</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-10">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product Card 5 - Wardrobe Solutions -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group" data-category="wardrobe-solutions">
+                    <a href="#" class="block h-full w-full relative">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/Products/3.jpg" alt="Wardrobe Solutions" class="w-full h-48 object-cover transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">Wardrobe Solutions</h3>
+                                <div class="flex items-center gap-2 text-white/80 text-xs">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Premium Hardware</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Durable Design</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-10">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product Card 6 - Kitchen Storage -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group" data-category="kitchen-storage">
+                    <a href="#" class="block h-full w-full relative">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/Products/4.jpg" alt="Kitchen Storage" class="w-full h-48 object-cover transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">Kitchen Storage</h3>
+                                <div class="flex items-center gap-2 text-white/80 text-xs">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Smart Organization</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                    <i class="fas fa-check-circle text-amber-400"></i>
+                                    <span>Easy Access</span>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-10">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OEM Partnership Section -->
+    <section id="oem" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">OEM Partnership Program</h2>
+                <p class="text-lg text-gray-600 mb-8">Partner with us to build your brand with our premium quality
+                    products. We offer complete white-label solutions with your branding.</p>
+                <a href="#contact"
+                    class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition duration-300">Become
+                    a Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="assets/images/about-image.jpg" alt="About Starray India" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6">About Starray India</h2>
+                    <p class="text-gray-600 mb-6">Based in Delhi-NCR, we are a leading manufacturer of premium kitchen
+                        hardware solutions, serving clients across India with commitment to quality and timely delivery.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <i class="fas fa-truck text-3xl text-amber-500 mb-4"></i>
+                            <h3 class="font-semibold">Pan-India Delivery</h3>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-medal text-3xl text-amber-500 mb-4"></i>
+                            <h3 class="font-semibold">Premium Quality</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-amber-500"
+                            rows="4"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="mt-6 bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 w-full">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Starray India</h3>
+                    <p class="text-gray-400">Premium kitchen hardware solutions for your business.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#oem" class="text-gray-400 hover:text-white">OEM Partnership</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Delhi-NCR, India</li>
+                        <li>Phone: +91 XXXXXXXXXX</li>
+                        <li>Email: info@starrayindia.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Starray India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
     <!-- custom js -->
     <script src="assets/js/global.js"></script>
     <script src="assets/js/script.js"></script>
