@@ -1,4 +1,4 @@
-// Initialize Owl Carousel for Product Showcase
+/* Document Ready Functions */
 $(document).ready(function() {
     // Product Showcase Carousel
     $('.product-showcase').owlCarousel({
@@ -47,26 +47,89 @@ $(document).ready(function() {
             }
         }
     });
+
+    // Category Cards Carousel
+    $('.category-cards-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        center: true,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            520: {
+                items: 3
+            },
+            640: {
+                items: 3
+            },
+            768: {
+                items: 3
+            },
+            1024: {
+                items: 5
+            },
+            1280: {
+                items: 7
+            }
+        },
+        onInitialized: function(event) {
+            // Add custom dots
+            const items = event.item.count;
+            const dotsContainer = document.querySelector('.custom-nav-dots');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < items; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => {
+                    $('.category-cards-carousel').trigger('to.owl.carousel', [i, 300]);
+                });
+                dotsContainer.appendChild(dot);
+            }
+        },
+        onChanged: function(event) {
+            // Update active dot
+            const dots = document.querySelectorAll('.custom-nav-dots .dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === event.item.index);
+            });
+        }
+    });
+
+    // Custom Navigation for Category Carousel
+    $('.category-prev-btn').click(function() {
+        $('.category-cards-carousel').trigger('prev.owl.carousel', [300]);
+    });
+
+    $('.category-next-btn').click(function() {
+        $('.category-cards-carousel').trigger('next.owl.carousel', [300]);
+    });
 });
 
-// Custom Hero Slider
+/* Hero Slider */
 document.addEventListener('DOMContentLoaded', function() {
     const sliderItems = document.querySelectorAll('.slider-item');
     const sliderDotsContainer = document.querySelector('.slider-dots');
     const sliderPrev = document.querySelector('.slider-prev');
     const sliderNext = document.querySelector('.slider-next');
 
-    let currentIndex = 0; // Start at the first slide
+    let currentIndex = 0;
     const totalItems = sliderItems.length;
-    const slideInterval = 5000; // Autoplay interval in milliseconds
-    const transitionDuration = 1000; // Match CSS transition duration
+    const slideInterval = 5000;
+    const transitionDuration = 1000;
     let autoplayTimer;
-    let isAnimating = false; // Flag to prevent rapid clicking
+    let isAnimating = false;
 
     // Create navigation dots
     function createDots() {
         if (!sliderDotsContainer) return;
-        // Clear existing dots before creating new ones
         sliderDotsContainer.innerHTML = '';
         sliderItems.forEach((_, index) => {
             const dot = document.createElement('span');
@@ -98,25 +161,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isAnimating || index < 0 || index >= totalItems) return;
 
         isAnimating = true;
-
-        // Remove active class from current item
         sliderItems[currentIndex].classList.remove('active');
-
-        // Update index
         currentIndex = index;
-
-        // Add active class to the new item
         sliderItems[currentIndex].classList.add('active');
-
         updateDots();
 
-        // Allow animation to complete before enabling clicks
         setTimeout(() => {
             isAnimating = false;
-        }, transitionDuration); // Use transitionDuration for timeout
+        }, transitionDuration);
     }
 
-    // Next and previous slide functions for infinite loop
+    // Next and previous slide functions
     function nextSlide() {
         if (!isAnimating) {
             goToSlide((currentIndex + 1) % totalItems);
@@ -133,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sliderPrev) sliderPrev.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
     if (sliderNext) sliderNext.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
 
-    // Autoplay
+    // Autoplay functions
     function startAutoplay() {
         autoplayTimer = setInterval(nextSlide, slideInterval);
     }
@@ -154,21 +209,16 @@ document.addEventListener('DOMContentLoaded', function() {
         heroSection.addEventListener('mouseleave', startAutoplay);
     }
 
-    // Initialize dots and set initial active slide
+    // Initialize slider
     createDots();
-    // Set the first slide as active on page load
     if (sliderItems.length > 0) {
         sliderItems[0].classList.add('active');
-        updateDots(); // Ensure dots are updated for the initial state
+        updateDots();
     }
-
-    // Start autoplay after initial setup
     startAutoplay();
-
-    // No need to handle window resize specifically for position with fade, but good to recreate dots if items change dynamically (not applicable here)
 });
 
-// Product Image Gallery
+/* Product Gallery */
 function initProductGallery() {
     const mainImage = document.querySelector('.product-main-image');
     const thumbnails = document.querySelectorAll('.product-thumbnail');
@@ -176,11 +226,8 @@ function initProductGallery() {
     if (mainImage && thumbnails.length > 0) {
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', () => {
-                // Update main image
                 mainImage.src = thumb.src;
                 mainImage.alt = thumb.alt;
-                
-                // Update active state
                 thumbnails.forEach(t => t.classList.remove('active'));
                 thumb.classList.add('active');
             });
@@ -188,10 +235,9 @@ function initProductGallery() {
     }
 }
 
-// Initialize Product Gallery
 document.addEventListener('DOMContentLoaded', initProductGallery);
 
-// Add to Cart Animation
+/* Cart Functionality */
 function addToCartAnimation(button) {
     const cart = document.querySelector('.cart-icon');
     if (!cart) return;
@@ -228,7 +274,6 @@ function addToCartAnimation(button) {
     
     setTimeout(() => {
         flyingImage.remove();
-        // Add cart animation
         cart.classList.add('animate-bounce');
         setTimeout(() => cart.classList.remove('animate-bounce'), 1000);
     }, 800);
@@ -242,7 +287,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     });
 });
 
-// Lazy Loading Images
+/* Lazy Loading */
 document.addEventListener('DOMContentLoaded', function() {
     const lazyImages = document.querySelectorAll('img[data-src]');
     
@@ -260,42 +305,178 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyImages.forEach(img => imageObserver.observe(img));
 });
 
-// Product Categories Filtering
+/* Category Filtering */
 document.addEventListener('DOMContentLoaded', function() {
     const categoryCards = document.querySelectorAll('.category-card');
     const productCards = document.querySelectorAll('.product-card');
+    let activeDropdown = null;
 
+    // Product filtering
     categoryCards.forEach(card => {
         card.addEventListener('click', () => {
             const filterValue = card.dataset.filter;
-
-            // Remove active class from all category cards
             categoryCards.forEach(c => c.classList.remove('active'));
-            // Add active class to the clicked card
             card.classList.add('active');
 
-            // Filter product cards with fade effect
             productCards.forEach(productCard => {
                 const productCategory = productCard.dataset.category;
                 if (filterValue === 'all' || productCategory === filterValue) {
-                    productCard.style.display = 'block'; // Show the card
-                     setTimeout(() => { // Add a slight delay before making it visible for fade effect
+                    productCard.style.display = 'block';
+                    setTimeout(() => {
                         productCard.style.opacity = '1';
                     }, 10);
                 } else {
-                    productCard.style.opacity = '0'; // Start fade out
-                     setTimeout(() => { // Hide completely after fade out
-                         productCard.style.display = 'none';
-                     }, 300); // Match with CSS transition duration if you add one
+                    productCard.style.opacity = '0';
+                    setTimeout(() => {
+                        productCard.style.display = 'none';
+                    }, 300);
                 }
             });
         });
     });
 
-    // Set 'All Products' category as active and show all products on initial load
+    // Set initial active category
     const allProductsCard = document.querySelector('.category-card[data-filter="all"]');
     if (allProductsCard) {
         allProductsCard.classList.add('active');
-        // Initially show all products (they are displayed by default in HTML)
     }
+
+    // Category dropdown handling
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            const dropdown = this.querySelector('.subcategory-dropdown');
+            const isAllProducts = this.dataset.filter === 'all';
+            
+            if (activeDropdown === dropdown) {
+                if (dropdown) {
+                    dropdown.classList.remove('show');
+                }
+                this.classList.remove('active');
+                activeDropdown = null;
+                return;
+            }
+
+            if (activeDropdown) {
+                activeDropdown.classList.remove('show');
+                const activeCard = activeDropdown.closest('.category-card');
+                if (activeCard) {
+                    activeCard.classList.remove('active');
+                }
+                activeDropdown = null;
+            }
+
+            if (isAllProducts) {
+                categoryCards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                return;
+            }
+
+            if (dropdown) {
+                dropdown.classList.add('show');
+                this.classList.add('active');
+                activeDropdown = dropdown;
+            }
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.category-card')) {
+            if (activeDropdown) {
+                activeDropdown.classList.remove('show');
+                const activeCard = activeDropdown.closest('.category-card');
+                if (activeCard) {
+                    activeCard.classList.remove('active');
+                }
+                activeDropdown = null;
+            }
+        }
+    });
+
+    // Handle subcategory clicks
+    const subcategoryItems = document.querySelectorAll('.subcategory-dropdown li');
+    subcategoryItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const subfilter = this.dataset.subfilter;
+            subcategoryItems.forEach(i => i.classList.remove('bg-amber-50'));
+            this.classList.add('bg-amber-50');
+            console.log('Selected subcategory:', subfilter);
+        });
+    });
+});
+
+/* Timeline Animation */
+const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            const items = entry.target.querySelectorAll('.timeline-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+    });
+}, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+});
+
+document.querySelectorAll('.timeline-item').forEach(item => {
+    timelineObserver.observe(item);
+});
+
+// Timeline hover effects
+document.querySelectorAll('.timeline-item .bg-white').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+    });
+});
+
+// Stats Number Animation
+function animateStats() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = parseInt(target.textContent);
+                let currentValue = 0;
+                const duration = 2000; // 2 seconds
+                const increment = finalValue / (duration / 16); // 60fps
+                
+                const updateValue = () => {
+                    currentValue = Math.min(currentValue + increment, finalValue);
+                    target.textContent = Math.round(currentValue) + '+';
+                    
+                    if (currentValue < finalValue) {
+                        requestAnimationFrame(updateValue);
+                    }
+                };
+                
+                updateValue();
+                observer.unobserve(target);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+    
+    stats.forEach(stat => observer.observe(stat));
+}
+
+// Initialize stats animation when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing initialization code ...
+    
+    // Initialize stats animation
+    animateStats();
 });

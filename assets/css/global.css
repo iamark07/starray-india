@@ -290,3 +290,86 @@ h2 {
 ::-webkit-scrollbar-thumb:hover {
   background: #d97706;
 }
+
+
+
+
+
+/* Footer Styles */
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(245, 158, 11, 0.3), transparent);
+}
+
+footer input:focus {
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+footer .social-icon {
+  transition: all 0.3s ease;
+}
+
+footer .social-icon:hover {
+  transform: translateY(-3px);
+}
+
+footer .certification-img {
+  transition: all 0.3s ease;
+}
+
+footer .certification-img:hover {
+  transform: scale(1.05);
+}
+
+footer .quick-link {
+  position: relative;
+}
+
+footer .quick-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #f59e0b;
+  transition: width 0.3s ease;
+}
+
+footer .quick-link:hover::after {
+  width: 100%;
+}
+
+footer h4 {
+  color: white !important;
+}
+
+.footer-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
