@@ -54,29 +54,34 @@ $(document).ready(function() {
         margin: 10,
         nav: false,
         dots: false,
-        center: true,
         autoplay: false,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
         smartSpeed: 1000,
         responsive: {
             0: {
-                items: 1
+                items: 2,
+                autoplay: false
             },
             520: {
-                items: 3
+                items: 3,
+                autoplay: false
             },
             640: {
-                items: 3
+                items: 3,
+                autoplay: false
             },
             768: {
-                items: 3
+                items: 3,
+                autoplay: false
             },
             1024: {
-                items: 5
+                items: 5,
+                autoplay: false
             },
             1280: {
-                items: 7
+                items: 7,
+                autoplay: false
             }
         },
         onInitialized: function(event) {

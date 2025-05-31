@@ -123,7 +123,6 @@ html {
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
         0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -265,14 +264,16 @@ html {
     border-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 2px solid #f59e0b;
+    color: #f59e0b !important;
     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
 }
 
 .category-card h3 {
-    color: inherit;
+    color: #1f2937;
 }
 
 .category-card i {
+     color: #4b5563;
     transition: color 0.3s ease;
 }
 
@@ -308,16 +309,22 @@ html {
 .subcategory-dropdown.show li:nth-child(5) { animation-delay: 0.25s; }
 
 /* Owl Carousel Styles */
+
+.category-cards-carousel .owl-stage-outer{
+    overflow: visible !important;
+}
 .category-cards-carousel .owl-stage {
     display: flex;
     align-items: center;
     padding: 20px 0px;
 }
 
+
 .category-cards-carousel .owl-item {
     opacity: 0.7;
     transform: scale(0.9);
     transition: all 0.3s ease;
+    overflow: visible !important;
 }
 
 .category-cards-carousel .owl-item.active {
