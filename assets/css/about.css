@@ -1,0 +1,61 @@
+.about-section h3 {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.about-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #f59e0b, #fbbf24);
+    border-radius: 9999px;
+}
+
+.about-section .space-y-8 > div {
+
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.about-section .space-y-8 > div:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.about-section .flex.items-center i {
+    margin-right: 0.75rem; /* mr-3 */
+}
+
+
+.about-section .grid.md\:grid-cols-3 > div {
+
+}
+
+.about-section .grid.md\:grid-cols-3 .rounded-full {
+
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for team member cards */
+.about-section .sm\:grid-cols-2.md\:grid-cols-3 > div {
+    overflow: hidden;
+}
+
+.about-section .sm\:grid-cols-2.md\:grid-cols-3 img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.about-section .sm\:grid-cols-2.md\:grid-cols-3 > div:hover img {
+    transform: scale(1.05);
+}
+
+.about-section .sm\:grid-cols-2.md\:grid-cols-3 .p-6 {
+
+    background-color: #fff;
+} 
