@@ -59,7 +59,67 @@
                     <nav class="hidden md:flex md:justify-end space-x-8 text-[15px] mt-6 pb-2">
                         <a href="/" class="nav-link active-nav-link">Home</a>
                         <a href="#about" class="nav-link">About Us</a>
-                        <a href="#products" class="nav-link">Products</a>
+                        <div class="nav-dropdown relative group">
+                            <a class="nav-link flex items-center gap-1 cursor-pointer !py-0">
+                                Products
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="gradient-header">
+                                    <h4>Our Products</h4>
+                                </div>
+                                <ul class="">
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>All Products</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Cabinet Hinges</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Wicker Baskets</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Rolling Shutters</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Kitchen Solutions</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Bins</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Tandem Box</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#products" class="group/item">
+                                            <span>Lift-Up Systems</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <a href="#oem" class="nav-link">OEM Partnership</a>
                         <a href="#contact" class="nav-link">Contact</a>
                     </nav>
@@ -84,7 +144,68 @@
         <nav class="flex flex-col p-4 space-y-4 text-sm">
             <a href="/" class="mobile-nav-link mobile-nav-link-active">Home</a>
             <a href="#about" class="mobile-nav-link">About Us</a>
-            <a href="#products" class="mobile-nav-link">Products</a>
+            <div class="mobile-nav-dropdown">
+                <button
+                    class="mobile-nav-link w-full flex items-center justify-between mobile-dropdown-toggle hover:!px-[10px]">
+                    <span>Products</span>
+                    <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="mobile-dropdown-menu hidden">
+                    <div class="bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-2">
+                        <h4 class="text-white text-xs font-semibold">Our Products</h4>
+                    </div>
+                    <ul class="py-1">
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>All Products</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Cabinet Hinges</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Wicker Baskets</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Rolling Shutters</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Kitchen Solutions</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Bins</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Tandem Box</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#products" class="mobile-dropdown-link">
+                                <span>Lift-Up Systems</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <a href="#oem" class="mobile-nav-link">OEM Partnership</a>
             <a href="#contact" class="mobile-nav-link">Contact</a>
         </nav>
@@ -152,7 +273,7 @@
                 <!-- Category Cards Carousel -->
                 <div class="category-cards-wrapper relative">
                     <!-- Custom Navigation Arrows -->
-                    <div class="custom-nav-arrows absolute right-0 -top-10 md:-top-14 z-10 flex gap-2">
+                    <div class="custom-nav-arrows absolute right-2 -top-10 md:-top-14 z-10 flex gap-2">
                         <button
                             class="category-prev-btn w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white transition-all duration-300">
                             <i class="fas fa-chevron-left text-lg"></i>
@@ -166,8 +287,8 @@
                     <!-- Category Cards Carousel -->
                     <div class="category-cards-carousel owl-carousel">
                         <!-- All Products Card -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg active flex flex-col justify-center items-center"
-                            data-filter="all">
+                        <div
+                            class="category-card active w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="slack" class="md:text-2xl"></i>
                             </div>
@@ -175,8 +296,8 @@
                         </div>
 
                         <!-- Category Card - Cabinet Hinges -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="cabinet-hinges">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="door-open" class="md:text-2xl"></i>
                             </div>
@@ -291,8 +412,8 @@
                         </div>
 
                         <!-- Category Card - Wicker Baskets -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="wicker-baskets">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="package-open" class="md:text-2xl"></i>
                             </div>
@@ -330,8 +451,8 @@
                         </div>
 
                         <!-- Category Card - Rolling Shutters -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="rolling-shutters">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="blinds" class="md:text-2xl"></i>
                             </div>
@@ -382,8 +503,8 @@
                         </div>
 
                         <!-- Category Card - Kitchen Corner Solutions -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="kitchen-corner">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="box" class="md:text-2xl"></i>
                             </div>
@@ -430,8 +551,8 @@
                         </div>
 
                         <!-- Category Card - Bins -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="bins">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="trash-2" class="md:text-2xl"></i>
                             </div>
@@ -468,8 +589,8 @@
                         </div>
 
                         <!-- Category Card - Tandem Attachments -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="tandem-attachments">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="package-plus" class="md:text-2xl"></i>
                             </div>
@@ -513,8 +634,8 @@
                         </div>
 
                         <!-- Category Card - Lift-Up Systems -->
-                        <div class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center"
-                            data-filter="lift-up-systems">
+                        <div
+                            class="category-card w-full bg-white rounded-lg shadow-md p-4 text-center cursor-pointer transition duration-300 hover:shadow-lg flex flex-col justify-center items-center">
                             <div class="mb-2">
                                 <i data-lucide="arrow-up" class="md:text-2xl"></i>
                             </div>
@@ -545,19 +666,18 @@
                     </div>
 
                     <!-- Custom Navigation Dots -->
-                    <div class="custom-nav-dots flex justify-center mt-6 gap-2">
-                        <!-- Dots will be added by JavaScript -->
-                    </div>
+                    <div class="custom-nav-dots flex justify-center gap-2 mt-4"></div>
                 </div>
 
                 <div>
 
                     <!-- Product Grid -->
-                    <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-5 sm:gap-5" id="product-grid">
-                        <!-- Product Card 1 - Cabinet Hinges -->
+                    <div class=" mt-6 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-5 sm:gap-5"
+                        id="product-grid">
+                        <!-- Product Card 1-->
                         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
-                            data-category="cabinet-hinges">
-                            <a href="#" class="block h-full w-full relative">
+                            data-product-id="1">
+                            <div>
                                 <div class="relative overflow-hidden">
                                     <img src="assets/images/Products/1.jpg" alt="Cabinet Hinges"
                                         class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
@@ -580,21 +700,23 @@
                                     </div>
                                     <div
                                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button
-                                            class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
-                                            <span class="flex items-center gap-2">
-                                                <i class="fas fa-eye"></i>
-                                            </span>
-                                        </button>
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
 
-                        <!-- Product Card 2 - Slimbox -->
+                        <!-- Product Card 2-->
                         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
-                            data-category="slimbox">
-                            <a href="#" class="block h-full w-full relative">
+                            data-product-id="2">
+                            <div>
                                 <div class="relative overflow-hidden">
                                     <img src="assets/images/Products/7.jpg" alt="Slimbox"
                                         class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
@@ -617,21 +739,23 @@
                                     </div>
                                     <div
                                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button
-                                            class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
-                                            <span class="flex items-center gap-2">
-                                                <i class="fas fa-eye"></i>
-                                            </span>
-                                        </button>
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
 
-                        <!-- Product Card 3 - Modular Storage -->
+                        <!-- Product Card 3-->
                         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
-                            data-category="modular-storage">
-                            <a href="#" class="block h-full w-full relative">
+                            data-product-id="3">
+                            <div>
                                 <div class="relative overflow-hidden">
                                     <img src="assets/images/Products/2.jpg" alt="Modular Storage"
                                         class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
@@ -654,21 +778,23 @@
                                     </div>
                                     <div
                                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button
-                                            class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
-                                            <span class="flex items-center gap-2">
-                                                <i class="fas fa-eye"></i>
-                                            </span>
-                                        </button>
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
 
-                        <!-- Product Card 4 - Plinth Solutions -->
+                        <!-- Product Card 4-->
                         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
-                            data-category="plinth-solutions">
-                            <a href="#" class="block h-full w-full relative">
+                            data-product-id="4">
+                            <div>
                                 <div class="relative overflow-hidden">
                                     <img src="assets/images/Products/5.jpg" alt="Plinth Solutions"
                                         class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
@@ -691,21 +817,23 @@
                                     </div>
                                     <div
                                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button
-                                            class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
-                                            <span class="flex items-center gap-2">
-                                                <i class="fas fa-eye"></i>
-                                            </span>
-                                        </button>
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
 
-                        <!-- Product Card 5 - Wardrobe Solutions -->
+                        <!-- Product Card 5-->
                         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
-                            data-category="wardrobe-solutions">
-                            <a href="#" class="block h-full w-full relative">
+                            data-product-id="5">
+                            <div>
                                 <div class="relative overflow-hidden">
                                     <img src="assets/images/Products/3.jpg" alt="Wardrobe Solutions"
                                         class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
@@ -728,21 +856,23 @@
                                     </div>
                                     <div
                                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button
-                                            class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
-                                            <span class="flex items-center gap-2">
-                                                <i class="fas fa-eye"></i>
-                                            </span>
-                                        </button>
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
 
-                        <!-- Product Card 6 - Kitchen Storage -->
+                        <!-- Product Card 6-->
                         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
-                            data-category="kitchen-storage">
-                            <a href="#" class="block h-full w-full relative">
+                            data-product-id="6">
+                            <div>
                                 <div class="relative overflow-hidden">
                                     <img src="assets/images/Products/4.jpg" alt="Kitchen Storage"
                                         class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
@@ -765,15 +895,93 @@
                                     </div>
                                     <div
                                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button
-                                            class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
-                                            <span class="flex items-center gap-2">
-                                                <i class="fas fa-eye"></i>
-                                            </span>
-                                        </button>
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
+                        </div>
+                        <!-- Product Card 7 -->
+                        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
+                            data-product-id="7">
+                            <div>
+                                <div class="relative overflow-hidden">
+                                    <img src="assets/images/Products/8.jpg" alt="Kitchen Storage"
+                                        class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                        <h3
+                                            class="text-sm sm:text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">
+                                            Kitchen Storage</h3>
+                                        <div class="hidden sm:flex items-center gap-2 text-white/80 text-xs">
+                                            <i class="fas fa-check-circle text-amber-400"></i>
+                                            <span>Smart Organization</span>
+                                        </div>
+                                        <div class="hidden sm:flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                            <i class="fas fa-check-circle text-amber-400"></i>
+                                            <span>Easy Access</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Card 8-->
+                        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 fade-up group"
+                            data-product-id="8">
+                            <div>
+                                <div class="relative overflow-hidden">
+                                    <img src="assets/images/Products/6.jpg" alt="Kitchen Storage"
+                                        class="w-full h-36 sm:h-48 object-cover transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 p-3 sm:p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                        <h3
+                                            class="text-sm sm:text-lg font-[500] mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">
+                                            Kitchen Storage</h3>
+                                        <div class="hidden sm:flex items-center gap-2 text-white/80 text-xs">
+                                            <i class="fas fa-check-circle text-amber-400"></i>
+                                            <span>Smart Organization</span>
+                                        </div>
+                                        <div class="hidden sm:flex items-center gap-2 text-white/80 text-xs mt-[3px]">
+                                            <i class="fas fa-check-circle text-amber-400"></i>
+                                            <span>Easy Access</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                        <a href="product.html">
+                                            <button
+                                                class="view-details-btn bg-white text-gray-800 px-4 py-2 rounded-full shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 sm:mb-10">
+                                                <span class="flex items-center gap-2">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Pagination -->
@@ -784,7 +992,7 @@
                                 class="pagination-btn prev-btn w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-gray-600 disabled:hover:border-gray-200">
                                 <i class="fas fa-chevron-left text-xs sm:text-sm"></i>
                             </button>
-        
+
                             <!-- Page Numbers -->
                             <div class="flex items-center space-x-2">
                                 <button
@@ -797,7 +1005,7 @@
                                 <button
                                     class="pagination-number w-10 h-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 flex items-center justify-center font-medium transition-all duration-300 text-xs sm:text-sm">8</button>
                             </div>
-        
+
                             <!-- Next Button -->
                             <button
                                 class="pagination-btn next-btn w-10 h-10 rounded-lg border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-all duration-300">
@@ -963,7 +1171,7 @@
                         </div>
                     </div>
 
-                    
+
 
                     <!-- Global Reach -->
                     <div class="bg-gradient-to-r from-[#f59e0b] to-[#ec9b10] p-8 rounded-xl shadow-lg text-white">
@@ -999,7 +1207,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!-- Right Column - Content -->
@@ -1010,12 +1218,21 @@
                             <i class="fas fa-building text-amber-500 mr-3"></i>
                             Company Overview
                         </h3>
-                        <p class="text-gray-600 leading-relaxed mb-4 text-[15px]">
-                            Based in Delhi-NCR, Starray India has established itself as a premier manufacturer of
-                            premium kitchen hardware solutions. Our commitment to quality, innovation, and customer
-                            satisfaction has made us a trusted partner for businesses across India.
+                        <p class="text-gray-600 leading-relaxed mb-4 text-[14px]">
+                            Starray India is trusted name in the world of Kitchen Hardware Solutions. As specialized
+                            traders of plain kitchen hardware, we take pride in offering a comprehensive range of
+                            reliable, durable and functional products under our own exclusive starray Brand. From
+                            cabinet fittings to modular storage solution.
                         </p>
-                        <div class="grid sm:grid-cols-2 gap-4 mt-6 text-[15px]">
+                        <p class="text-gray-600 leading-relaxed mb-4 text-[14px]">
+                            From plinth to wardrobe solution-
+                            Our products are crafted to meet the everyday demands of Modular Kitchens a Wardrobe
+                            solution.
+                            Build your brand with confidence. Partner with Starray India – your trusted source for
+                            reliable kitchen hardware solutions.
+
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-4 mt-5 text-[14px]">
                             <div class="flex items-center space-x-3">
                                 <i class="fas fa-check-circle text-amber-500"></i>
                                 <span class="text-gray-700">ISO Certified</span>
@@ -1036,7 +1253,7 @@
                     </div>
 
                     <!-- Our Values -->
-                    <div class="pt-3 inline-block">
+                    <div class="pt-2 inline-block">
                         <h3 class="text-lg sm:text-2xl font-bold mb-6 flex items-center pb-2">
                             Our Core Values
                         </h3>
@@ -1202,24 +1419,58 @@
                     class="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent">
                     Why Choose Starray India?</h2>
                 <div class="w-24 h-[3px] bg-gradient-to-r from-amber-500 to-amber-400 mx-auto rounded-full mb-6"></div>
-                <p class="text-gray-600 text-lg">Discover the unique advantages that make us the preferred choice for premium kitchen hardware solutions across India.</p>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Discover the unique advantages that make us the
+                    preferred choice for
+                    premium kitchen hardware solutions across India.</p>
             </div>
 
             <!-- Main Content -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Quality Assurance -->
+                <!-- Pan India Presence -->
                 <div class="group">
                     <div class="flex flex-col items-center sm:items-start gap-6">
                         <div
                             class="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 transition-colors duration-300">
                             <i
-                                class="fas fa-award text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                                class="fas fa-map-marked-alt text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <div>
                             <h3
                                 class="text-lg md:text-xl font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300">
-                                Unmatched Quality Standards</h3>
-                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">Our state-of-the-art manufacturing facility employs advanced quality control systems that ensure each product meets international standards. We use premium materials and cutting-edge technology to deliver hardware that stands the test of time.</p>
+                                Pan India Presence</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">Based in Delhi NCR, we serve customers
+                                across the entire nation. Our extensive distribution network ensures that our premium
+                                kitchen hardware solutions reach every corner of India, backed by local support and
+                                service.</p>
+                            <div class="mt-4 flex items-center gap-4">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-amber-500"></i>
+                                    <span class="text-gray-600 text-xs sm:text-sm">Nationwide Coverage</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-amber-500"></i>
+                                    <span class="text-gray-600 text-xs sm:text-sm">Local Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality & Pricing -->
+                <div class="group">
+                    <div class="flex flex-col items-center sm:items-start gap-6">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 transition-colors duration-300">
+                            <i
+                                class="fas fa-tags text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div>
+                            <h3
+                                class="text-lg md:text-xl font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300">
+                                Premium Quality, Competitive Pricing</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">We offer the perfect balance of premium
+                                quality and competitive pricing. Our commitment to excellence in manufacturing ensures
+                                that you get the best value for your investment without compromising on quality.</p>
                             <div class="mt-4 flex items-center gap-4">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
@@ -1227,88 +1478,96 @@
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Advanced Testing</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">Best Value</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Innovation & Design -->
+                <!-- Brand-Centric OEM -->
                 <div class="group">
                     <div class="flex flex-col items-center sm:items-start gap-6">
                         <div
                             class="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 transition-colors duration-300">
                             <i
-                                class="fas fa-lightbulb text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                                class="fas fa-industry text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <div>
                             <h3
                                 class="text-lg md:text-xl font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300">
-                                Trendsetting Solutions</h3>
-                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">Stay ahead of the curve with our innovative hardware solutions. Our design team combines contemporary aesthetics with practical functionality, creating products that enhance both the look and performance of modern kitchens.</p>
+                                Brand-Centric OEM Solutions</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">As a leading OEM manufacturer, we provide
+                                comprehensive white-label solutions that help you build your brand. Our state-of-the-art
+                                manufacturing facility and quality control systems ensure consistent excellence in every
+                                product.</p>
                             <div class="mt-4 flex items-center gap-4">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Contemporary Designs</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">White Label Solutions</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Smart Solutions</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">Quality Assurance</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Customer Support -->
+                <!-- Timely Delivery -->
                 <div class="group">
                     <div class="flex flex-col items-center sm:items-start gap-6">
                         <div
                             class="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 transition-colors duration-300">
                             <i
-                                class="fas fa-headset text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                                class="fas fa-truck-fast text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <div>
                             <h3
                                 class="text-lg md:text-xl font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300">
-                                Comprehensive Support</h3>
-                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">Experience hassle-free service with our end-to-end support system. From initial consultation to installation guidance and after-sales service, our team of experts ensures your complete satisfaction at every step.</p>
+                                Commitment to Timely Delivery</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">We understand the importance of timely
+                                delivery in your business operations. Our efficient logistics network and streamlined
+                                processes ensure that your orders reach you on schedule, every time.</p>
                             <div class="mt-4 flex items-center gap-4">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Technical Expertise</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">On-Time Delivery</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Quick Response</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">Efficient Logistics</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sustainability -->
-                <div class="group">
-                    <div class="flex flex-col items-center sm:items-start gap-6">
+                <!-- Customer First -->
+                <div class="group lg:col-span-2">
+                    <div class="flex flex-col items-center gap-6">
                         <div
                             class="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 transition-colors duration-300">
                             <i
-                                class="fas fa-leaf text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                                class="fas fa-users text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <div>
                             <h3
-                                class="text-lg md:text-xl font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300">
-                                Eco-Conscious Manufacturing</h3>
-                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">Make an environmentally responsible choice with our sustainable manufacturing approach. We implement energy-efficient processes, use recyclable materials, and maintain strict environmental compliance to minimize our ecological footprint.</p>
-                            <div class="mt-4 flex items-center gap-4">
+                                class="text-lg md:text-xl font-bold text-gray-800 mb-3 group-hover:text-amber-600 transition-colors duration-300  sm:text-center">
+                                Customer-First Approach</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm  sm:text-center">Your satisfaction is our
+                                top priority. We believe in building long-term relationships through exceptional
+                                service, transparent communication, and unwavering support at every step of your journey
+                                with us.</p>
+                            <div class="mt-4 flex items-center sm:justify-center gap-4">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Energy Efficient</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">24/7 Support</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle text-amber-500"></i>
-                                    <span class="text-gray-600 text-xs sm:text-sm">Recyclable Materials</span>
+                                    <span class="text-gray-600 text-xs sm:text-sm">Personalized Service</span>
                                 </div>
                             </div>
                         </div>
@@ -1316,32 +1575,436 @@
                 </div>
             </div>
 
-
             <!-- Stats Section -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8 md:gap-8 mt-20">
                 <div class="text-center group">
                     <div
-                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 transition-transform duration-300">
                         500+</div>
                     <p class="text-gray-600 text-sm md:text-base">Happy Clients</p>
                 </div>
                 <div class="text-center group">
                     <div
-                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 transition-transform duration-300">
                         1000+</div>
                     <p class="text-gray-600 text-sm md:text-base">Products Delivered</p>
                 </div>
                 <div class="text-center group">
                     <div
-                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 transition-transform duration-300">
                         13+</div>
                     <p class="text-gray-600 text-sm md:text-base">Years Experience</p>
                 </div>
                 <div class="text-center group">
                     <div
-                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+                        class="stat-number text-3xl md:text-4xl font-semibold text-amber-500 mb-2 transition-transform duration-300">
                         50+</div>
                     <p class="text-gray-600 text-sm md:text-base">Cities Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner with Starray Section -->
+    <section class="py-24 bg-gradient-to-b from-[#f6f6f6] to-white relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-10 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2
+                    class="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent">
+                    Partner with Starray
+                </h2>
+                <div class="w-24 h-[3px] bg-gradient-to-r from-amber-500 to-amber-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Starray India – Where quality meets affordability and
+                    every products is a promise of performance.</p>
+            </div>
+
+            <!-- Partnership Benefits -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+                <!-- Brand Building -->
+                <div class="bg-white rounded-xl shadow-lg px-6 py-8 sm:p-8 transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-amber-50 flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-crown text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-800 mb-4 group-hover:text-amber-600 transition-colors duration-300">
+                        Build Your Brand</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Create your own brand identity with our
+                        white-label solutions. We provide complete OEM support to help you establish your market
+                        presence.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Custom Branding Options</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">White-Label Solutions</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Brand Development Support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business Growth -->
+                <div class="bg-white rounded-xl shadow-lg px-6 py-8 sm:p-8 transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-amber-50 flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-chart-line text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-800 mb-4 group-hover:text-amber-600 transition-colors duration-300">
+                        Grow Your Business</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Expand your business with our comprehensive
+                        partnership program. Get exclusive access to premium products and business support.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Exclusive Territory Rights</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Business Development Support</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Marketing Assistance</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Partnership Support -->
+                <div class="bg-white rounded-xl shadow-lg px-6 py-8 sm:p-8 transition-all duration-300 group">
+                    <div
+                        class="w-16 h-16 rounded-xl bg-amber-50 flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-handshake text-2xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-800 mb-4 group-hover:text-amber-600 transition-colors duration-300">
+                        Complete Partnership Support</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">We provide end-to-end support to ensure your
+                        success. From product training to after-sales service, we're with you every step of the way.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Technical Training</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">After-Sales Support</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-amber-500"></i>
+                            <span class="text-gray-600">Regular Partner Updates</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Partnership Process -->
+            <div
+                class="relative overflow-hidden bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 rounded-2xl px-6 py-8 sm:p-8 md:p-16 text-white shadow-lg">
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+                    <div class="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                </div>
+
+                <div class="relative z-10">
+                    <h3
+                        class="text-2xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-100">
+                        How to Become a Partner
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+                        <!-- Step 1 -->
+                        <div class="group transform transition-all duration-500 hover:-translate-y-2">
+                            <div
+                                class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 h-full">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gradient-to-br from-white to-amber-100 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-xl font-bold text-amber-600">1</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h4
+                                        class="font-bold text-lg mb-3 text-white group-hover:text-amber-100 transition-colors duration-300">
+                                        Contact Us</h4>
+                                    <p class="text-sm text-white/90 leading-relaxed">Reach out through our contact form
+                                        or call us directly to begin your partnership journey</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="group transform transition-all duration-500 hover:-translate-y-2">
+                            <div
+                                class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 h-full">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gradient-to-br from-white to-amber-100 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-xl font-bold text-amber-600">2</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h4
+                                        class="font-bold text-lg mb-3 text-white group-hover:text-amber-100 transition-colors duration-300">
+                                        Discussion</h4>
+                                    <p class="text-sm text-white/90 leading-relaxed">Meet our expert team to explore
+                                        exciting partnership opportunities and possibilities</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="group transform transition-all duration-500 hover:-translate-y-2">
+                            <div
+                                class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 h-full">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gradient-to-br from-white to-amber-100 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-xl font-bold text-amber-600">3</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h4
+                                        class="font-bold text-lg mb-3 text-white group-hover:text-amber-100 transition-colors duration-300">
+                                        Agreement</h4>
+                                    <p class="text-sm text-white/90 leading-relaxed">Review and sign our comprehensive
+                                        partnership agreement with full transparency</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="group transform transition-all duration-500 hover:-translate-y-2">
+                            <div
+                                class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 h-full">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gradient-to-br from-white to-amber-100 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        <span class="text-xl font-bold text-amber-600">4</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <h4
+                                        class="font-bold text-lg mb-3 text-white group-hover:text-amber-100 transition-colors duration-300">
+                                        Launch</h4>
+                                    <p class="text-sm text-white/90 leading-relaxed">Begin your exciting journey as a
+                                        valued Starray partner with full support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-16">
+                        <a href="#contact"
+                            class="inline-flex items-center gap-3 bg-white text-amber-600 px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-amber-50 group">
+                            <span class="hidden sm:block">Start Your Partnership Journey</span>
+                            <span class="sm:hidden">Join Us</span>
+                            <i
+                                class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="py-24 bg-[#fbfbfb] relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-10 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2
+                    class="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent">
+                    What We Offer
+                </h2>
+                <div class="w-24 h-[3px] bg-gradient-to-r from-amber-500 to-amber-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">At Starray, we focus on plain Kitchen Hardware
+                    essentials that form the backbone of any modular kitchen setup.</p>
+            </div>
+
+            <!-- Product Range -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
+                <!-- Cabinet Hinges -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-door-open text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Cabinet Hinges</h3>
+                    <p class="text-gray-600 text-sm">Premium quality hinges for smooth cabinet operation</p>
+                </div>
+
+                <!-- Slimbox -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-box text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Slimbox</h3>
+                    <p class="text-gray-600 text-sm">Space-efficient storage solutions for modern kitchens</p>
+                </div>
+
+                <!-- Modular Storage -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-layer-group text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Modular Storage</h3>
+                    <p class="text-gray-600 text-sm">Customizable storage solutions for every need</p>
+                </div>
+
+                <!-- Plinth -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-border-all text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Plinth</h3>
+                    <p class="text-gray-600 text-sm">Essential base solutions for kitchen cabinets</p>
+                </div>
+
+                <!-- Wardrobe Solution -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-tshirt text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Wardrobe Solution</h3>
+                    <p class="text-gray-600 text-sm">Complete hardware solutions for modern wardrobes</p>
+                </div>
+
+                <!-- Kitchen Storage -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-500 transition-colors duration-300">
+                        <i
+                            class="fas fa-utensils text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Kitchen Storage</h3>
+                    <p class="text-gray-600 text-sm">Innovative storage solutions for kitchen organization</p>
+                </div>
+
+                <!-- Additional Products -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-2">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex sm:flex-row flex-col items-start sm:items-center gap-4">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 transition-colors duration-300">
+                                <i
+                                    class="fas fa-plus text-xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">And More Premium Solutions...</h3>
+                                <p class="text-gray-600 text-sm">Discover our extensive collection of premium hardware
+                                    solutions</p>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-door-open text-amber-500"></i>
+                                <span class="text-sm text-gray-700">Door Handles & Locks</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="rows-3" class="text-amber-500 w-[18px]"></i>
+                                <span class="text-sm text-gray-700">Drawer Systems</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-sliders-h text-amber-500"></i>
+                                <span class="text-sm text-gray-700">Sliding Solutions</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-box text-amber-500"></i>
+                                <span class="text-sm text-gray-700">Storage Accessories</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end">
+                            <a href="#contact"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors duration-300 text-sm">
+                                View All Products
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Building -->
+            <div class="bg-white rounded-2xl px-6 py-8 sm:p-8 md:p-12 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Build Your Brand with Confidence
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm">We offer our entire product range under your label,
+                            allowing you to grow your own brand identity with confidence and consistency. Partner with
+                            us to:</p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-3">
+                                <div
+                                    class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-sm text-amber-500"></i>
+                                </div>
+                                <span class="text-gray-600">Launch your own branded product line</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div
+                                    class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-sm text-amber-500"></i>
+                                </div>
+                                <span class="text-gray-600">Access premium quality products</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div
+                                    class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-sm text-amber-500"></i>
+                                </div>
+                                <span class="text-gray-600">Benefit from our manufacturing expertise</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div
+                                    class="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-check text-sm text-amber-500"></i>
+                                </div>
+                                <span class="text-gray-600">Grow your market presence</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-w-4 aspect-h-3 rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets/images/banner/Home-Banner-2.jpg" alt="Starray Manufacturing"
+                                class="w-full w-full h-[250px] sm:h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="min-w-10 min-h-10 sm:min-w-12 sm:min-h-12 rounded-full bg-amber-500 flex items-center justify-center">
+                                    <i class="fas fa-medal text-white text-lg sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Quality Assured</h4>
+                                    <p class="text-xs sm:text-sm text-gray-600">ISO Certified Manufacturing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1371,7 +2034,7 @@
                                 <label class="block text-gray-700 text-sm font-medium mb-2">Your Name</label>
                                 <div class="relative">
                                     <input type="text"
-                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
+                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
                                         placeholder="John Doe">
                                 </div>
                             </div>
@@ -1379,7 +2042,7 @@
                                 <label class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
                                 <div class="relative">
                                     <input type="email"
-                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
+                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
                                         placeholder="john@example.com">
                                 </div>
                             </div>
@@ -1389,7 +2052,7 @@
                                 <label class="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
                                 <div class="relative">
                                     <input type="tel"
-                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
+                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
                                         placeholder="+91 XXXXXXXXXX">
                                 </div>
                             </div>
@@ -1397,7 +2060,7 @@
                                 <label class="block text-gray-700 text-sm font-medium mb-2">Subject</label>
                                 <div class="relative">
                                     <select
-                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300 appearance-none bg-white">
+                                        class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300 appearance-none bg-white">
                                         <option value="">Select a subject</option>
                                         <option value="product">Product Inquiry</option>
                                         <option value="partnership">Partnership Opportunity</option>
@@ -1410,7 +2073,7 @@
                         <div class="relative">
                             <label class="block text-gray-700 text-sm font-medium mb-2">Your Message</label>
                             <textarea rows="4"
-                                class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300 resize-none"
+                                class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300 resize-none"
                                 placeholder="How can we help you?"></textarea>
                         </div>
                         <button type="submit"

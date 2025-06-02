@@ -85,26 +85,43 @@ $(document).ready(function() {
             }
         },
         onInitialized: function(event) {
-            // Add custom dots
-            const items = event.item.count;
+            // Add custom dots only if the container exists
             const dotsContainer = document.querySelector('.custom-nav-dots');
-            dotsContainer.innerHTML = '';
-            
-            for (let i = 0; i < items; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'dot' + (i === 0 ? ' active' : '');
-                dot.addEventListener('click', () => {
-                    $('.category-cards-carousel').trigger('to.owl.carousel', [i, 300]);
-                });
-                dotsContainer.appendChild(dot);
+            if (dotsContainer) {
+                const items = event.item.count;
+                dotsContainer.innerHTML = '';
+                
+                for (let i = 0; i < items; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot' + (i === 0 ? ' active' : '');
+                    dot.addEventListener('click', () => {
+                        $('.category-cards-carousel').trigger('to.owl.carousel', [i, 300]);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
             }
+
+            // Add click event listeners to category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active class from all cards
+                    document.querySelectorAll('.category-card').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    // Add active class to clicked card
+                    this.classList.add('active');
+                });
+            });
         },
         onChanged: function(event) {
-            // Update active dot
-            const dots = document.querySelectorAll('.custom-nav-dots .dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === event.item.index);
-            });
+            // Update active dot only if dots container exists
+            const dotsContainer = document.querySelector('.custom-nav-dots');
+            if (dotsContainer) {
+                const dots = dotsContainer.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === event.item.index);
+                });
+            }
         }
     });
 
@@ -310,107 +327,6 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyImages.forEach(img => imageObserver.observe(img));
 });
 
-/* Category Filtering */
-document.addEventListener('DOMContentLoaded', function() {
-    const categoryCards = document.querySelectorAll('.category-card');
-    const productCards = document.querySelectorAll('.product-card');
-    let activeDropdown = null;
-
-    // Product filtering
-    categoryCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const filterValue = card.dataset.filter;
-            categoryCards.forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-
-            productCards.forEach(productCard => {
-                const productCategory = productCard.dataset.category;
-                if (filterValue === 'all' || productCategory === filterValue) {
-                    productCard.style.display = 'block';
-                    setTimeout(() => {
-                        productCard.style.opacity = '1';
-                    }, 10);
-                } else {
-                    productCard.style.opacity = '0';
-                    setTimeout(() => {
-                        productCard.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-
-    // Set initial active category
-    const allProductsCard = document.querySelector('.category-card[data-filter="all"]');
-    if (allProductsCard) {
-        allProductsCard.classList.add('active');
-    }
-
-    // Category dropdown handling
-    categoryCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            const dropdown = this.querySelector('.subcategory-dropdown');
-            const isAllProducts = this.dataset.filter === 'all';
-            
-            if (activeDropdown === dropdown) {
-                if (dropdown) {
-                    dropdown.classList.remove('show');
-                }
-                this.classList.remove('active');
-                activeDropdown = null;
-                return;
-            }
-
-            if (activeDropdown) {
-                activeDropdown.classList.remove('show');
-                const activeCard = activeDropdown.closest('.category-card');
-                if (activeCard) {
-                    activeCard.classList.remove('active');
-                }
-                activeDropdown = null;
-            }
-
-            if (isAllProducts) {
-                categoryCards.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                return;
-            }
-
-            if (dropdown) {
-                dropdown.classList.add('show');
-                this.classList.add('active');
-                activeDropdown = dropdown;
-            }
-        });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.category-card')) {
-            if (activeDropdown) {
-                activeDropdown.classList.remove('show');
-                const activeCard = activeDropdown.closest('.category-card');
-                if (activeCard) {
-                    activeCard.classList.remove('active');
-                }
-                activeDropdown = null;
-            }
-        }
-    });
-
-    // Handle subcategory clicks
-    const subcategoryItems = document.querySelectorAll('.subcategory-dropdown li');
-    subcategoryItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const subfilter = this.dataset.subfilter;
-            subcategoryItems.forEach(i => i.classList.remove('bg-amber-50'));
-            this.classList.add('bg-amber-50');
-            console.log('Selected subcategory:', subfilter);
-        });
-    });
-});
-
 /* Timeline Animation */
 const timelineObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -484,4 +400,52 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize stats animation
     animateStats();
+});
+
+// Function to animate products when they are shown
+function animateProducts() {
+    const productCards = document.querySelectorAll('.product-card');
+    
+    // First remove show class from all cards
+    productCards.forEach(card => {
+        card.classList.remove('show');
+    });
+
+    // Then add show class to visible cards with a small delay
+    setTimeout(() => {
+        productCards.forEach(card => {
+            if (card.style.display !== 'none') {
+                card.classList.add('show');
+            }
+        });
+    }, 50);
+}
+
+// Function to handle product filtering (to be called by backend)
+function showProducts(products) {
+    const productGrid = document.getElementById('product-grid');
+    const allProductCards = document.querySelectorAll('.product-card');
+    
+    // First hide all products
+    allProductCards.forEach(card => {
+        card.style.display = 'none';
+        card.classList.remove('show');
+    });
+
+    // Then show only the filtered products
+    products.forEach(productId => {
+        const card = document.querySelector(`[data-product-id="${productId}"]`);
+        if (card) {
+            card.style.display = 'block';
+        }
+    });
+
+    // Animate the visible products
+    animateProducts();
+}
+
+// Initialize products on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Show all products initially with animation
+    animateProducts();
 });
