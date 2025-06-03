@@ -219,63 +219,121 @@
     <!-- Product Details Section -->
     <section class="py-10 lg:py-16 bg-gray-50">
         <div class="container mx-auto px-6 md:px-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Added Breadcrumbs (Optional, good practice for product pages) -->
+            <nav class="hidden lg:block text-sm mb-6 text-gray-600" aria-label="Breadcrumb">
+                <ol class="list-none p-0 inline-flex">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-gray-600 hover:text-amber-600">Home</a>
+                        <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512">
+                            <path
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                        </svg>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="#" class="text-gray-600 hover:text-amber-600">Cabinet Hinges</a>
+                        <!-- Dynamic Category -->
+                        <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512">
+                            <path
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                        </svg>
+                    </li>
+                    <li>
+                        <span class="text-amber-500">MS 3D HYDRAULIC HINGE</span> <!-- Dynamic Product Name -->
+                    </li>
+                </ol>
+            </nav>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Left Column: Enhanced Image Gallery -->
                 <div class="product-image-gallery lg:sticky lg:top-[152.667px] h-fit">
-                    <div class="transform transition-transform duration-300">
+                    <div class="transform transition-transform duration-300 grid grid-cols-9 gap-5">
                         <!-- Main Image with Zoom Effect -->
-                        <div class="main-image mb-6 relative group">
-                            <img src="assets/images/Products/1.jpg" alt="Basic hooded sweatshirt in pink" 
-                                 class="w-full h-[300px] sm:h-[400px] object-cover transition-transform duration-500">
+                        <div class="main-image mb-6 relative group col-span-9 xl:col-span-7">
+                            <img src="assets/images/Products/1.jpg" alt="Basic hooded sweatshirt in pink"
+                                class="w-full h-[300px] sm:h-[400px] object-cover transition-transform duration-500">
                             <!-- Enhanced Image Navigation -->
-                            <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
+                            <button
+                                class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
                                 <i class="fas fa-chevron-left text-gray-800 text-lg"></i>
                             </button>
-                            <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
+                            <button
+                                class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white">
                                 <i class="fas fa-chevron-right text-gray-800 text-lg"></i>
                             </button>
                             <!-- Zoom Indicator -->
-                            <div class="hidden lg:block zoom-indicator absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div
+                                class="hidden lg:block zoom-indicator absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <i class="fas fa-search-plus mr-1"></i> Click to zoom
                             </div>
                         </div>
                         <!-- Enhanced Thumbnail Gallery -->
-                        <div class="thumbnail-images flex gap-4 overflow-x-auto">
-                            <div class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%]">
-                                <img src="assets/images/Products/1.jpg" alt="Thumbnail 1" 
-                                     class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
-                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="thumbnail-images flex xl:flex-col gap-4 overflow-x-auto col-span-9 xl:col-span-2">
+                            <div
+                                class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%] xl:w-full">
+                                <img src="assets/images/Products/1.jpg" alt="Thumbnail 1"
+                                    class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
+                                <div
+                                    class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                </div>
                             </div>
-                            <div class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%]">
-                                <img src="assets/images/Products/3.jpg" alt="Thumbnail 2" 
-                                     class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
-                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div
+                                class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%] xl:w-full">
+                                <img src="assets/images/Products/3.jpg" alt="Thumbnail 2"
+                                    class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
+                                <div
+                                    class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                </div>
                             </div>
-                            <div class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%]">
-                                <img src="assets/images/Products/4.jpg" alt="Thumbnail 3" 
-                                     class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
-                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-                            <div class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%]">
-                                <img src="assets/images/Products/5.jpg" alt="Thumbnail 4" 
-                                     class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
-                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-                            <div class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%]">
-                                <img src="assets/images/Products/6.jpg" alt="Thumbnail 5" 
-                                     class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
-                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div
+                                class="thumbnail-item relative group cursor-pointer flex-shrink-0 w-[25%] sm:flex-shrink sm:w-[20%] xl:w-full">
+                                <img src="assets/images/Products/4.jpg" alt="Thumbnail 3"
+                                    class="w-full h-24 object-cover border-2 border-transparent group-hover:border-amber-500 transition-all duration-300">
+                                <div
+                                    class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product Content -->
-                <div class="flex flex-col lg:h-full">
-                    <h1 class="product-title text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight syne-font">Cabinate Hings</h1>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">This is a brief description of the product. It highlights the key features and benefits of the product, providing potential customers with essential information at a glance. We can expand on this description later if needed.</p>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Here is another paragraph to add more details about the product. You can include information about materials, features, benefits, or use cases here.</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">And a third paragraph for even more detailed information. This can help fill the space and provide a more comprehensive overview for the user.</p>
+                <!-- Right Column: Product Details -->
+                <div class="product-details">
+                    <!-- Product Name -->
+                    <h1 class="text-2xl md:text-3xl  font-[500] text-gray-900 mb-4 leading-tight poppins">MS 3D
+                        HYDRAULIC HINGE</h1> 
+                    <!-- Product Category -->
+                    <p class="mb-6 font-[400]">Category: <span class="text-amber-500">Cabinet Hinges</span></p>
+
+                    <!-- Product Description -->
+                    <div class="mb-8">
+                        <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3">Description</h2>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            
+                            Weight: 118 Grams/Pc
+                            
+                        </p>
+                    </div>
+
+                    <!-- Add more details here like features, specifications, etc. -->
+                    <div class="mb-8">
+                        <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3">Key Features</h2>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                            <li>Feature 1: High durability and smooth operation.</li>
+                            <li>Feature 2: Easy 3D adjustment for perfect alignment.</li>
+                            <li>Feature 3: Integrated hydraulic soft-close mechanism.</li>
+                            <li>Feature 4: Suitable for standard cabinet door applications.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Call to Action Button -->
+                    <a href="#contact">
+                        <button
+                            class="btn-1">
+                            <span>Inquire About This Product</span>
+                            <i data-lucide="shield-question" class="btn-1-icon"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
