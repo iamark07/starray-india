@@ -449,3 +449,342 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show all products initially with animation
     animateProducts();
 });
+
+
+
+
+
+// Ensure the script runs after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Function to initialize form validation for a given form
+    function initializeFormValidation(formId, inputConfig) {
+        const form = document.getElementById(formId);
+        if (!form) {
+            console.error(`Form element with ID "${formId}" not found!`);
+            return; // Stop initialization if form is not found
+        }
+
+        // Map input keys to their elements, errors, and validation logic
+        const inputs = {};
+        Object.entries(inputConfig).forEach(([key, config]) => {
+             const inputElement = document.getElementById(config.inputId);
+             if (!inputElement) {
+                 console.error(`Form input element with ID "${config.inputId}" for key "${key}" not found!`);
+                 // Skip this input if element is not found
+                 return;
+             }
+             inputs[key] = {
+                 input: inputElement,
+                 error: createErrorElement(),
+                 validate: config.validate
+             };
+        });
+
+        // Check if all *configured* input elements were found
+        checkInputElements(inputs);
+
+        // Add error elements to the DOM
+        addErrorElements(inputs);
+
+        // Set up real-time validation listeners
+        setupRealtimeValidation(inputs);
+
+        // Add the main submit event listener
+        form.addEventListener('submit', (e) => handleFormSubmit(e, inputs, form));
+
+        console.log(`Form validation initialized for form ID: ${formId}`);
+    }
+
+    // Helper function to create an error element
+    function createErrorElement() {
+        const error = document.createElement('p');
+        error.className = 'text-red-500 text-xs mt-1 error-message';
+        error.style.display = 'none';
+        return error;
+    }
+
+    // Check if all input elements defined in the inputs object were successfully found
+    function checkInputElements(inputsMap) {
+         Object.keys(inputsMap).forEach(key => {
+            if (!inputsMap[key].input) {
+                // This case should ideally be caught during the initial mapping,
+                // but this serves as an extra check if needed.
+                console.error(`Input element for key "${key}" is missing in the inputs map.`);
+            }
+        });
+    }
+
+    // Add error elements to the DOM
+    function addErrorElements(inputsMap) {
+        Object.values(inputsMap).forEach(({input, error}) => {
+            if (input && input.parentNode) {
+                 // Find the closest parent that is a form group or similar container
+                 let container = input.closest('.form-group');
+                 if (container) {
+                     container.appendChild(error);
+                 } else {
+                    // Fallback if no specific container found
+                     if (input.tagName === 'SELECT' && input.parentNode.classList.contains('relative')) {
+                         input.parentNode.after(error); // After the relative div for select
+                     } else {
+                        input.after(error); // After the input element
+                     }
+                 }
+            }
+        });
+    }
+
+    // Validate a single input and update its UI
+    function validateInput(key, inputsMap) {
+        const {input, error, validate} = inputsMap[key];
+        if (!input || !error) return false; // Critical error: element or error div missing
+
+        const value = input.value;
+        const errorMessage = validate(value);
+
+        if (errorMessage) {
+            error.textContent = errorMessage;
+            error.style.display = 'block';
+            input.classList.add('border-red-500');
+            input.classList.remove('border-gray-200'); // Assuming default border is gray-200
+            // For select, also add red border to the parent div if needed for styling
+            if (input.tagName === 'SELECT' && input.parentNode.classList.contains('relative')) {
+                 input.parentNode.classList.add('border-red-500');
+                 input.parentNode.classList.remove('border-gray-200');
+            }
+            return false;
+        } else {
+            error.style.display = 'none';
+            input.classList.remove('border-red-500');
+            input.classList.add('border-gray-200');
+             // For select, remove red border from the parent div
+             if (input.tagName === 'SELECT' && input.parentNode.classList.contains('relative')) {
+                 input.parentNode.classList.remove('border-red-500');
+                 input.parentNode.classList.add('border-gray-200');
+            }
+            return true;
+        }
+    }
+
+    // Validate all inputs and return overall form validity
+    function validateForm(inputsMap) {
+        let isValid = true;
+        // Use Object.keys to iterate over successfully found inputs
+        Object.keys(inputsMap).forEach(key => {
+            if (!validateInput(key, inputsMap)) {
+                isValid = false;
+            }
+        });
+        return isValid;
+    }
+
+    // Set up real-time validation event listeners
+    function setupRealtimeValidation(inputsMap) {
+        Object.entries(inputsMap).forEach(([key, {input}]) => {
+            if (!input) return; // Should not happen if checkInputElements works
+
+            // For phone input: filter non-digits and validate on input/blur
+            if (key === 'phone') {
+                input.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                    validateInput(key, inputsMap);
+                });
+                 input.addEventListener('blur', () => validateInput(key, inputsMap));
+            }
+            // For name input: filter digits and validate on input/blur
+            else if (key === 'name') {
+                input.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/\d/g, '');
+                    validateInput(key, inputsMap);
+                });
+                 input.addEventListener('blur', () => validateInput(key, inputsMap));
+            }
+            // For subject select: validate on change and blur
+            else if (key === 'subject') {
+                input.addEventListener('change', () => validateInput(key, inputsMap));
+                input.addEventListener('blur', () => validateInput(key, inputsMap));
+            }
+            // For other inputs (email, message): validate on input and blur
+            else {
+                 input.addEventListener('input', () => validateInput(key, inputsMap));
+                 input.addEventListener('blur', () => validateInput(key, inputsMap));
+            }
+        });
+    }
+
+    // Show success message popup
+    function showSuccessMessage(formElement) {
+        // Remove any existing messages first
+        removeMessageElements();
+
+        const successMessage = document.createElement('div');
+        // Use tailwind classes for styling
+        successMessage.className = 'success-message mt-4 p-3 rounded-lg text-green-700 bg-green-100 border border-green-200';
+        successMessage.textContent = 'Thank you for your message. We will get back to you soon!';
+
+        // Insert the success message after the form
+        if (formElement && formElement.parentNode) {
+             formElement.parentNode.insertBefore(successMessage, formElement.nextSibling);
+             successMessage.style.display = 'block'; // Make it visible
+        }
+
+
+        // Auto-hide after 5 seconds (adjust time as needed)
+        setTimeout(() => {
+            if (successMessage && successMessage.parentNode) {
+                successMessage.parentNode.removeChild(successMessage);
+            }
+        }, 5000);
+    }
+
+    // Remove any existing success or error messages from previous submissions
+     function removeMessageElements() {
+         const existingMessages = document.querySelectorAll('.success-message, .error-message-submission');
+         existingMessages.forEach(msg => msg.parentNode.removeChild(msg));
+     }
+
+
+    // Handle form submission
+    async function handleFormSubmit(e, inputsMap, formElement) {
+        e.preventDefault(); // Prevent default browser form submission
+
+        // Remove previous submission messages
+        removeMessageElements();
+
+        // Validate all fields first. This also updates UI errors.
+        const isFormValid = validateForm(inputsMap);
+
+        if (!isFormValid) {
+            // Find the first key where validateInput returns false
+            const firstInvalidKey = Object.keys(inputsMap).find(key => !validateInput(key, inputsMap));
+
+            if (firstInvalidKey && inputsMap[firstInvalidKey].input) {
+                 const targetInput = inputsMap[firstInvalidKey].input;
+                 targetInput.focus();
+                // Scroll to the first error
+                targetInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            // Do NOT proceed with submission
+            return;
+        }
+
+        // --- Proceed with form submission ONLY if isFormValid is true ---
+
+        // Here you would typically send the form data to your server (AJAX request)
+        // Example (replace with your actual endpoint and logic):
+        // const formData = new FormData(formElement);
+        // try {
+        //     const response = await fetch('/your-server-endpoint', {
+        //         method: 'POST',
+        //         body: formData
+        //     });
+        //     if (!response.ok) {
+        //         throw new Error(`HTTP error! status: ${response.status}`);
+        //     }
+        //     const result = await response.json();
+        //     console.log('Server response:', result);
+        //     // If server submission is successful, then show the success message:
+        //     showSuccessMessage(formElement);
+        //     formElement.reset(); // Reset form on successful submission
+        //      // Also reset all validation error states visually
+        //     Object.values(inputsMap).forEach(({input, error}) => {
+        //         if (input) {
+        //             input.classList.remove('border-red-500');
+        //             input.classList.add('border-gray-200');
+        //              if (input.tagName === 'SELECT' && input.parentNode.classList.contains('relative')) {
+        //                  input.parentNode.classList.remove('border-red-500');
+        //                  input.parentNode.classList.add('border-gray-200');
+        //              }
+        //         }
+        //         if (error) {
+        //             error.style.display = 'none';
+        //         }
+        //     });
+        //
+        // } catch (error) {
+        //     console.error('Form submission failed:', error);
+        //     // Handle submission error (e.g., show an error message)
+        //     const errorMessage = document.createElement('div');
+        //      errorMessage.className = 'error-message-submission mt-4 p-3 rounded-lg text-red-700 bg-red-100 border border-red-200';
+        //     errorMessage.textContent = 'An error occurred. Please try again.'; // Generic error message
+        //     if (formElement && formElement.parentNode) {
+        //          formElement.parentNode.insertBefore(errorMessage, formElement.nextSibling);
+        //           errorMessage.style.display = 'block';
+        //     }
+        // }
+
+        // For demonstration (without server submission), just show the success message and reset form:
+         showSuccessMessage(formElement);
+         formElement.reset();
+         // Also reset all validation error states visually
+        Object.values(inputsMap).forEach(({input, error}) => {
+            if (input) {
+                input.classList.remove('border-red-500');
+                input.classList.add('border-gray-200');
+                 if (input.tagName === 'SELECT' && input.parentNode.classList.contains('relative')) {
+                     input.parentNode.classList.remove('border-red-500');
+                     input.parentNode.classList.add('border-gray-200');
+                 }
+            }
+            if (error) {
+                error.style.display = 'none';
+            }
+        });
+    }
+
+    // --- Script Initialization ---
+
+    // Define configuration for the contact form in index.html
+    const indexContactFormConfig = {
+        name: {
+             inputId: 'nameIndex',
+             validate: (value) => {
+                if (!value.trim()) return 'This field is required';
+                if (value.length < 3) return 'Name must be at least 3 characters';
+                if (value.length > 60) return 'Name cannot exceed 60 characters';
+                if (/\d/.test(value)) return 'Name cannot contain numbers';
+                return '';
+            }
+        },
+        email: {
+             inputId: 'emailIndex',
+             validate: (value) => {
+                if (!value.trim()) return 'This field is required';
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if (!emailRegex.test(value)) return 'Please enter a valid email address';
+                return '';
+            }
+        },
+        phone: {
+             inputId: 'phoneIndex',
+             validate: (value) => {
+                if (!value.trim()) return 'This field is required';
+                if (!/^[6-9]/.test(value)) return 'Phone number must start with 6, 7, 8, or 9';
+                if (!/^\d{10}$/.test(value)) return 'Phone number must be exactly 10 digits';
+                return '';
+            }
+        },
+        subject: {
+             inputId: 'subjectIndex',
+             validate: (value) => {
+                if (!value || value === '') return 'Please select a subject';
+                return '';
+            }
+        },
+        message: {
+             inputId: 'messageIndex',
+             validate: (value) => {
+                if (!value.trim()) return 'This field is required';
+                if (value.length < 10) return 'Message must be at least 10 characters';
+                return '';
+            }
+        }
+    };
+
+    // Initialize validation for the contact form in index.html
+    initializeFormValidation('contactFormIndex', indexContactFormConfig);
+
+    // You can add initialization for other forms here if needed
+    // initializeFormValidation('anotherFormId', anotherFormConfig);
+}); 

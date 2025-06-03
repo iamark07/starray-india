@@ -111,6 +111,8 @@ html {
 .slider-next {
     right: 1rem;
 }
+  
+
 
 /* Product Cards */
 .product-card {
@@ -586,6 +588,80 @@ html {
 
 /* Product Grid Animation Container */
 #product-grid {
-    min-height: 200px; /* Prevent layout shift during animation */
+    min-height: 200px;
     position: relative;
 }
+
+.text-red-500 {
+    color: #ef4444;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem; 
+}
+
+/* Basic styling for validation messages */
+.error-message {
+     animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Styling for the success message popup */
+.success-message {
+     color: #047857;
+     background-color: #dcfce7; 
+     border-color: #86efac;
+     margin-top: 1rem;
+     padding: 0.75rem;
+     border-radius: 0.5rem;
+     border-width: 1px;
+     display: none;
+}
+
+/* Styling for a potential submission error message */
+.error-message-submission {
+     color: #b91c1c; 
+     border-color: #fca5a5;
+     margin-top: 1rem;
+     padding: 0.75rem;
+     border-radius: 0.5rem;
+     border-width: 1px;
+     display: none;
+}
+
+
+/* Input focus states (already likely in your CSS, just ensure consistency) */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    /* Using amber focus styles as seen in your HTML snippet */
+    border-color: #f59e0b !important; /* amber-500 */
+    box-shadow: 0 0 0 2px rgba(253, 186, 116, 0.5) !important; /* amber-200 with opacity */
+}
+
+/* Error state styling for inputs (already likely in your CSS) */
+input.border-red-500, textarea.border-red-500, select.border-red-500 {
+    border-color: #ef4444 !important; /* red-500 */
+}
+
+/* Ensure the parent div of select also gets error border if your CSS applies it there */
+.form-group .relative.border-red-500 {
+     border-color: #ef4444 !important;
+}
+.form-group .relative.border-gray-200 {
+     border-color: #e5e7eb !important; /* gray-200 */
+} 

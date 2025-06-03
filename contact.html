@@ -221,9 +221,9 @@
         <div class="container mx-auto px-6 md:px-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-                <div class="w-24 h-[3px] bg-gradient-to-r from-amber-500 to-amber-400 mx-auto rounded-full"></div>
-                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">We'd love to hear from you. Reach out to us for any
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="section-underline"></div>
+                <p class="section-subtitle">We'd love to hear from you. Reach out to us for any
                     inquiries about our products, partnerships, or support.</p>
             </div>
 
@@ -237,9 +237,9 @@
                             <i class="fas fa-map-marker-alt text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Our Location</h3>
-                            <p class="text-gray-600 text-sm md:text-base">123 Business Park, Sector 62</p>
-                            <p class="text-gray-600 text-sm md:text-base">Noida, Uttar Pradesh 201301</p>
+                            <h3 class="sm:text-lg font-semibold text-gray-900 mb-2">Our Location</h3>
+                            <p class="text-gray-600 text-sm">123 Business Park, Sector 62</p>
+                            <p class="text-gray-600 text-sm">Noida, Uttar Pradesh 201301</p>
                         </div>
                     </div>
 
@@ -250,9 +250,9 @@
                             <i class="fas fa-phone-alt text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Phone Number</h3>
-                            <p class="text-gray-600">+91 98765 43210</p>
-                            <p class="text-gray-600">+91 98765 43211</p>
+                            <h3 class="sm:text-lg font-semibold text-gray-900 mb-2">Phone Number</h3>
+                            <p class="text-gray-600 text-sm">+91 98765 43210</p>
+                            <p class="text-gray-600 text-sm">+91 98765 43211</p>
                         </div>
                     </div>
 
@@ -263,9 +263,9 @@
                             <i class="fas fa-envelope text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Email Address</h3>
-                            <p class="text-gray-600 text-sm md:text-base">info@starrayindia.com</p>
-                            <p class="text-gray-600 text-sm md:text-base">support@starrayindia.com</p>
+                            <h3 class="sm:text-lg font-semibold text-gray-900 mb-2">Email Address</h3>
+                            <p class="text-gray-600 text-sm">info@starrayindia.com</p>
+                            <p class="text-gray-600 text-sm">support@starrayindia.com</p>
                         </div>
                     </div>
 
@@ -276,9 +276,9 @@
                             <i class="fas fa-clock text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Working Hours</h3>
-                            <p class="text-gray-600 text-sm md:text-base">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                            <p class="text-gray-600 text-sm md:text-base">Saturday: 10:00 AM - 4:00 PM</p>
+                            <h3 class="sm:text-lg font-semibold text-gray-900 mb-2">Working Hours</h3>
+                            <p class="text-gray-600 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p class="text-gray-600 text-sm">Saturday: 10:00 AM - 4:00 PM</p>
                         </div>
                     </div>
                     <!-- Map Section -->
@@ -290,37 +290,36 @@
                     </section>
                 </div>
 
-
                 <!-- Contact Form -->
                 <div class="bg-white rounded-xl shadow-lg px-6 py-8 md:p-8 xl:col-span-4 h-fit">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-                    <form id="contactForm" class="space-y-6">
-                        <div class="grid md:grid-cols-2 lg:grid-cols-1 gap-6">
+                    <form id="contactForm" class="space-y-6 flex flex-col items-center">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-1 gap-6 w-full">
                             <div>
                                 <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" required
+                                <input type="text" id="name" name="name"
                                     class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300">
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email
                                     Address</label>
-                                <input type="email" id="email" name="email" required
+                                <input type="email" id="email" name="email"
                                     class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300">
                             </div>
                         </div>
 
-                        <div class="grid md:grid-cols-2 gap-6">
+                        <div class="grid md:grid-cols-2 gap-6 w-full">
                             <div>
                                 <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Phone
                                     Number</label>
-                                <input type="tel" id="phone" name="phone" required
+                                <input type="tel" id="phone" name="phone"
                                     class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300">
                             </div>
                             <div>
                                 <label for="subject"
                                     class="block text-gray-700 text-sm font-medium mb-2">Subject</label>
                                 <div class="relative">
-                                    <select
+                                    <select id="subject" name="subject"
                                         class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300 appearance-none bg-white">
                                         <option value="">Select</option>
                                         <option value="product">Product Inquiry</option>
@@ -332,18 +331,18 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="w-full">
                             <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Your
                                 Message</label>
-                            <textarea id="message" name="message" rows="5" required
+                            <textarea id="message" name="message" rows="5"
                                 class="text-sm w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-transparent focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"></textarea>
                         </div>
 
                         <button type="submit"
-                            class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-2 group">
+                            class="btn-1">
                             <span>Send Message</span>
                             <i
-                                class="fas fa-paper-plane transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                                class="fas fa-paper-plane btn-1-icon"></i>
                         </button>
                     </form>
                 </div>
@@ -581,6 +580,7 @@
     </footer>
 
     <!-- custom js -->
+    <script src="assets/js/contact-form.js"></script>
     <script src="assets/js/global.js"></script>
 </body>
 

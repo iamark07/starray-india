@@ -58,41 +58,41 @@ document.querySelectorAll('.fade-up').forEach(element => {
     observer.observe(element);
 });
 
-// Form Validation
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+// // Form Validation
+// const forms = document.querySelectorAll('form');
+// forms.forEach(form => {
+//     form.addEventListener('submit', function(e) {
+//         e.preventDefault();
         
-        let isValid = true;
-        const requiredFields = form.querySelectorAll('[required]');
+//         let isValid = true;
+//         const requiredFields = form.querySelectorAll('[required]');
         
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add('border-red-500');
-            } else {
-                field.classList.remove('border-red-500');
-            }
-        });
+//         requiredFields.forEach(field => {
+//             if (!field.value.trim()) {
+//                 isValid = false;
+//                 field.classList.add('border-red-500');
+//             } else {
+//                 field.classList.remove('border-red-500');
+//             }
+//         });
         
-        if (isValid) {
-            // Here you would typically send the form data to your server
-            console.log('Form submitted:', new FormData(form));
-            form.reset();
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4';
-            successMessage.textContent = 'Thank you for your message. We will get back to you soon!';
-            form.appendChild(successMessage);
+//         if (isValid) {
+//             // Here you would typically send the form data to your server
+//             console.log('Form submitted:', new FormData(form));
+//             form.reset();
+//             // Show success message
+//             const successMessage = document.createElement('div');
+//             successMessage.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4';
+//             successMessage.textContent = 'Thank you for your message. We will get back to you soon!';
+//             form.appendChild(successMessage);
             
-            // Remove success message after 5 seconds
-            setTimeout(() => {
-                successMessage.remove();
-            }, 5000);
-        }
-    });
-});
+//             // Remove success message after 5 seconds
+//             setTimeout(() => {
+//                 successMessage.remove();
+//             }, 5000);
+//         }
+//     });
+// });
 
 // Navbar Scroll Effect
 let lastScroll = 0;

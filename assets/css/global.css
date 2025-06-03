@@ -53,6 +53,99 @@ html {
   padding: 0 1.5rem; /* Increased padding */
 }
 
+
+.section-title {
+  font-size: 1.5rem;        /* Tailwind: text-2xl */
+  font-weight: 700;         /* Tailwind: font-bold */
+  text-align: center;       /* Tailwind: text-center */
+  margin-bottom: 1rem;      /* Tailwind: mb-4 */
+}
+
+/* Responsive style for md:text-3xl (768px and up) */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.875rem;    /* Tailwind: text-3xl */
+  }
+}
+
+.section-subtitle {
+  color: #4B5563;           /* Tailwind: text-gray-600 */
+  margin-top: 1.5rem;       /* Tailwind: mt-6 */
+  max-width: 42rem;         /* Tailwind: max-w-2xl (672px) */
+  margin-left: auto;        /* Tailwind: mx-auto (horizontal auto margin) */
+  margin-right: auto;
+}
+
+.section-underline {
+  width: 6rem; /* Tailwind: w-24 = 96px */
+  height: 3px; /* Tailwind: h-[3px] */
+  background: linear-gradient(to right, #f59e0b, #fbbf24); /* amber-500 to amber-400 */
+  margin-left: auto;   /* Tailwind: mx-auto */
+  margin-right: auto;
+  border-radius: 9999px; /* Tailwind: rounded-full */
+  margin-bottom: 1.5rem; /* Tailwind: mb-6 = 24px */
+}
+
+
+
+.btn-1 {
+  background: linear-gradient(to right, #f59e0b, #d97706); /* from-amber-500 to-amber-600 */
+  color: white;
+  padding: 1rem 2rem; /* py-4 px-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 600; /* font-semibold */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* space-x-2 */
+  transition: all 0.3s ease;
+  transform: translateZ(0); /* for smooth transform */
+}
+
+.btn-1:hover {
+  background: linear-gradient(to right, #d97706, #b45309); /* hover:from-amber-600 to-amber-700 */
+}
+
+.btn-1-icon {
+  width: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-1:hover .btn-1-icon {
+  transform: translateX(4px); /* group-hover:translate-x-1 => 4px */
+}
+
+
+
+.btn-2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+  background-color: white;
+  color: #d97706; /* amber-600 */
+  padding: 1rem 2.5rem; /* py-4 px-10 */
+  border-radius: 0.75rem; /* rounded-xl */
+  font-weight: bold;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  transition: all 0.3s ease;
+}
+
+.btn-2:hover {
+  background-color: #fff8e1; /* approx amber-50 */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* hover:shadow-xl */
+}
+
+.btn-2-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-2:hover .btn-2-icon {
+  transform: translateX(8px); /* group-hover:translate-x-2 => 8px */
+}
+
+
+
+
 /* Typography */
 h1,
 h2,

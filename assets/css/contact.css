@@ -310,7 +310,54 @@ body {
 }
 
 .error-message {
-    background: #fee2e2;
+    /* background: #fee2e2; */
     color: #991b1b;
-    border: 1px solid #fca5a5;
+    /* border: 1px solid #fca5a5; */
+}
+
+/* Error message styling */
+.error-message {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success popup styling */
+.success-popup {
+    min-width: 320px;
+    max-width: 90%;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Input focus states */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Error state styling */
+input.border-red-500, textarea.border-red-500, select.border-red-500 {
+    border-color: #ef4444 !important;
+    /* background-color: #fef2f2 !important; */
 } 
